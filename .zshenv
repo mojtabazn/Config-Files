@@ -1,8 +1,4 @@
-#-------------------------------------------------
-# file:     ~/.zshenv
-# author:   jason ryan - http://jasonwryan.com/
-# vim:fenc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=zsh:
-#-------------------------------------------------
+
 
 # point Zsh at the right dotfiles
 ZDOTDIR="${ZDOTDIR:-$HOME/.zsh}"
