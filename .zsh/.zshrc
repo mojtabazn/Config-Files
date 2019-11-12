@@ -3,7 +3,7 @@ export ZSH="/usr/share/oh-my-zsh"
 source /usr/share/oh-my-zsh/oh-my-zsh.sh
 
 #######################################
-alias config='/usr/bin/git --git-dir=$HOME/Config-Files/ --work-tree=$HOME'
+alias gity='/usr/bin/git --git-dir=$HOME/Config-Files/ --work-tree=$HOME'
 #=========================================================
 # Plugins
 plugins=(
