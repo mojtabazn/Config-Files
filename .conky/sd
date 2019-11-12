@@ -1,0 +1,89 @@
+conky.config = {
+   use_xft =true, xftalpha =0.1, xftfont ="Lucida Grande:size=10",
+    update_interval =1,
+    total_run_times =0,
+    -- Create own window instead of using desktop
+    own_window_argb_visual =true, own_window_argb_value =255,
+    
+    own_window =true,
+    own_window_type = desktop,
+    own_window_class =conky,
+    own_window_transparent =true,
+    own_window_hints ='undecorated,below,sticky,skip_taskbar,skip_pager',
+   background =true,
+    double_buffer =true,
+     
+    maximum_width =1366,
+    maximum_height =768,
+    draw_shades =false,
+    draw_outline =false,
+    draw_borders =false,
+    draw_graph_borders =false,
+    default_color =white,
+    default_shade_color= white,
+    default_outline_color= white,
+    alignment =top_left,
+    gap_x =15,
+    gap_y =0,
+    false_buffers =true,
+    uppercase= false,
+    cpu_avg_samples =4,
+    net_avg_samples= 2,
+    override_utf8_locale =true,
+    use_spacer =true,
+    -- Color pick:
+    color1= 'FFFFFF',
+    color2= '00FF00',
+     };
+
+   
+conky.text = [[
+${offset 30}${voffset 20}${font Digital Readout Thick Upright:size=60}${color3}${if_match ${time %l}<=9}${time %l:%M%p}${else}${if_match ${time %l}>=10}${time %l:%M%p}${endif}${endif}${font}
+${offset 80}${font :size=10}${color orange}UTC ${color3}${tztime UTC %H:%M} ${font :size=10}${color orange}PST ${color3}${tztime PST8PDT %H:%M}${font}
+${offset 45}${font :bold:size=12}${color3}${time %A, %d %b. %Y}${font}
+${offset 70}${font Open Sans Regular:size=14}${execi 3600 jdate +%W|grep -o --color=never -e ^....|fribidi --ltr}${offset 2}،${offset 2}${execi 3600 jdate +%V|fribidi --ltr}${offset 2}${execi 3600 jdate +%W|grep -o --color=never -e ..$|fribidi --ltr}${offset 2}،${offset 2}${execi 3600 jdate +%G|fribidi --ltr}
+
+${voffset 0}${offset 950}${font Open Sans Regular :pixelsize=130}| ${voffset -80}${offset -30}${font Open Sans Regular :pixelsize=24}Top Proc:                              
+${offset 1020}${font Open Sans Regular :pixelsize=12}$color2${top name 1}${alignr}$color1${top cpu 1}%
+${offset 1020}${font Open Sans Regular :pixelsize=12}$color2${top name 2}${alignr}$color1${top cpu 2}%
+${offset 1020}${font Open Sans Regular :pixelsize=12}$color2${top name 3}${alignr}$color1${top cpu 3}%
+${offset 1020}${font Open Sans Regular :pixelsize=12}$color2${top name 4}${alignr}$color1${top cpu 4}%
+${offset 1020}${font Open Sans Regular :pixelsize=12}$color2${top name 5}${alignr}$color1${top cpu 5}%
+${voffset -130}${offset 12}${font Open Sans Regular :pixelsize=12}$color2 Root: ${offset 9}$color1${fs_free /} / ${fs_size /}${offset 9}$color2 Home: $color1${fs_free /home} / $color1${fs_size /home}$color2${offset 9} RAM: ${offset 9}$color1$mem / $memmax ${offset 9}${font Open Sans Regular :pixelsize=12} $color2 Uptime: $color1${uptime}
+
+${offset 12}$color2 CPU: ${offset 9}$color1${cpu cpu0}% ${offset 9}$color1${cpu cpu1}% ${offset 9}$color1${cpu cpu2}% ${offset 9}$color1${cpu cpu3}% ${if_existing /proc/net/route wls1}${voffset 1}${offset 9}${font Open Sans Regular :pixelsize=12}$color2 Down: ${offset 9}$color1 ${downspeed wls1} (${totaldown wls1}) ${offset 9}${font Open Sans Regular :pixelsize=12}$color2 Up: ${offset 9}$color1${upspeed wls1}(${totalup wls1})${endif}
+${if_existing /proc/net/route ens5}${voffset 1}${offset 9}${font Open Sans Regular :pixelsize=12}$color2 Down: ${offset 9}$color1 ${downspeed ens5} (${totaldown ens5}) ${offset 9}${font Open Sans Regular :pixelsize=12}$color2 Up: ${offset 9}$color1${upspeed ens5}(${totalup ens5})${endif}
+${offset 14}$color${color2}Open ports : ${color3}${tcp_portmon 1 65535 count}${color1}   Incoming :  ${tcp_portmon 1 32767 count}${color1}   Outgoing : ${tcp_portmon 32768 65535 count}
+
+${offset 14}${color1}HDrive : ${color2}${exec  nc localhost 7634  | cut -c34-35}°C  ${color1}Core 1 : ${color2}${exec sensors | grep 'Core 0' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}  ${color1}Core 2 : ${color2}${exec sensors | grep 'Core 1' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'} ${color1}Core 3 : ${color2}${exec sensors | grep 'Core 2' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}  ${color1}Core 4 : ${color2}${exec sensors | grep 'Core 3' | awk '{print $3}' | sed 's/+//' | sed 's/\.0//g'}  ${color1}GPU : ${color2}${exec sensors | grep 'hyst' | cut -c16-17}°C 
+${color green}${font OpenLogos:size=45}T${font Open Sans Regular :pixelsize=18}${goto 35}$color1  ${kernel} $machine
+${offset 950}${font Open Sans Regular :pixelsize=130}$color1| ${voffset -80}${offset -30}${font Open Sans Regular :pixelsize=24}Top Mem:                              
+${offset 1020}${font Open Sans Regular :pixelsize=12}$color2${top_mem name  1}${alignr}$color1${top_mem mem 1}%
+${offset 1020}${font Open Sans Regular :pixelsize=12}$color2${top_mem name  2}${alignr}$color1${top_mem mem 2}%
+${offset 1020}${font Open Sans Regular :pixelsize=12}$color2${top_mem name  3}${alignr}$color1${top_mem mem 3}%
+${offset 1020}${font Open Sans Regular :pixelsize=12}$color2${top_mem name  4}${alignr}$color1${top_mem mem 4}%
+${offset 1020}${font Open Sans Regular :pixelsize=12}$color2${top_mem name  5}${alignr}$color1${top_mem mem 5}%
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+]];
