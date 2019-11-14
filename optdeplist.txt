@@ -1,0 +1,17 @@
+cinnamon-translations
+dialog
+ebtables
+fltk
+gtk-engines
+ipset
+libfbclient
+libisoburn
+libstatgrab
+linux-firmware
+lirc
+mcpp
+modemmanager
+python-pycryptodome
+qt5-xmlpatterns
+ttf-opensans
+unixodbc
