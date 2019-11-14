@@ -1,7 +1,9 @@
 ac
 acpi_cpufreq
+af_alg
 agpgart
 ahci
+algif_hash
 arc4
 asus_laptop
 ath
@@ -104,6 +106,8 @@ nfnetlink
 nf_reject_ipv4
 nf_reject_ipv6
 nf_tables
+nft_chain_nat
+nft_ct
 nls_utf8
 ntfs
 pcc_cpufreq
@@ -111,6 +115,9 @@ psmouse
 radeon
 raid6_pq
 rfkill
+rmd128
+rmd256
+rmd320
 rng_core
 scsi_mod
 sd_mod
@@ -156,3 +163,4 @@ x_tables
 xt_conntrack
 xt_CT
 xt_tcpudp
+zlib_deflate
