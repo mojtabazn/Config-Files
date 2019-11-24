@@ -41,7 +41,7 @@ conky.text = [[
 ${offset 30}${voffset 20}${font Digital Readout Thick Upright:size=60}${color3}${if_match ${time %l}<=9}${time %l:%M%p}${else}${if_match ${time %l}>=10}${time %l:%M%p}${endif}${endif}${font}
 ${offset 80}${font :size=10}${color orange}UTC ${color3}${tztime UTC %H:%M} ${font :size=10}${color orange}PST ${color3}${tztime PST8PDT %H:%M}${font}
 ${offset 45}${font :bold:size=12}${color3}${time %A, %d %b. %Y}${font}
-${offset 70}${font Open Sans Regular:size=14}${execi 3600 jdate +%W|grep -o --color=never -e ^....|fribidi --ltr}${offset 2}،${offset 2}${execi 3600 jdate +%V|fribidi --ltr}${offset 2}${execi 3600 jdate +%W|grep -o --color=never -e ..$|fribidi --ltr}${offset 2}،${offset 2}${execi 3600 jdate +%G|fribidi --ltr}
+${offset 70}${font Droid Naskh Shift Alt Regular:size=14}${execi 3600 jdate +%W|grep -o --color=never -e ^....|fribidi --ltr}${offset 2}،${offset 2}${execi 3600 jdate +%V|fribidi --ltr}${offset 2}${execi 3600 jdate +%W|grep -o --color=never -e ..$|fribidi --ltr}${offset 2}،${offset 2}${execi 3600 jdate +%G|fribidi --ltr}
 
 ${voffset 0}${offset 950}${font Open Sans Regular :pixelsize=130}| ${voffset -80}${offset -30}${font Open Sans Regular :pixelsize=24}Top Proc:                              
 ${offset 1020}${font Open Sans Regular :pixelsize=12}$color2${top name 1}${alignr}$color1${top cpu 1}%

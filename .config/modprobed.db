@@ -106,8 +106,16 @@ nfnetlink
 nf_reject_ipv4
 nf_reject_ipv6
 nf_tables
+nf_tables_set
 nft_chain_nat
 nft_ct
+nft_fib
+nft_fib_inet
+nft_fib_ipv4
+nft_fib_ipv6
+nft_objref
+nft_reject
+nft_reject_inet
 nls_utf8
 ntfs
 pcc_cpufreq
