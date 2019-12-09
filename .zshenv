@@ -7,7 +7,7 @@ ZDOTDIR="${ZDOTDIR:-$HOME/.zsh}"
 export LC_ALL=
 export LC_COLLATE="C"
 export LESS="FX"
-export EDITOR="/usr/bin/vim"
+export EDITOR="/usr/bin/nano"
 export FCEDIT="$EDITOR"
 export VISUAL="$EDITOR"
 export SUDO_EDITOR="$EDITOR"
@@ -59,4 +59,3 @@ if [ "$TERM" = "linux" ]; then
     echo -en "\e]PFc0c0c0" #white
     clear # bring us back to default input colours
 fi
-

@@ -1,4 +1,5 @@
 ZSH_THEME="agnoster"
+DISABLE_AUTO_UPDATE="true"
 export ZSH="/usr/share/oh-my-zsh"
 source /usr/share/oh-my-zsh/oh-my-zsh.sh
 
@@ -7,28 +8,27 @@ alias gity='/usr/bin/git --git-dir=$HOME/Config-Files/ --work-tree=$HOME'
 #=========================================================
 # Plugins
 plugins=(
-     
+
         extract
         fancy-ctrl-z
-        
-        
+        systemd
+        archlinux
         git
         globalias
         magic-enter
-       
+
         web-search
         z
-        
+
         zsh-navigation-tools)
 ###########################
-export ZSH="/usr/share/oh-my-zsh"
-source /usr/share/oh-my-zsh/oh-my-zsh.sh
 
+alias  polproxy='export http_proxy="http://127.0.0.1:8118/"'
 
 ################################
 
 # Aliases
-alias  clc="clear"
+alias clc="clear"
 alias cls="clear"
 #alias cat="bat"
 alias ccp="clipcopy"
@@ -80,10 +80,10 @@ alias sysr="sudo systemctl restart"
 alias syss="systemctl status"
 alias systa="sudo systemctl start"
 alias systo="sudo systemctl stop"
-##############################################
+################Tor######################
+alias torid="pidof tor | xargs sudo kill -HUP"
 
-
-################## Yay For Aur#################### 
+################## Yay For Aur####################
 alias yayi="yay -S"
 alias yayu="yay -Syu"
 
@@ -96,15 +96,15 @@ alias su="su -"
 #####################################
 
 ############ <<<<<<<<<<Pulse Audio >>>>>>>>>>>>############
-alias pstop='pulseaudio -k' 
-alias pstart='pulseaudio --start' 
-alias pxstart='start-pulseaudio-x11' 
-alias prun='ps aux | grep pulse' 
-alias ptempr='rm -rf /tmp/pulse* ~/.pulse*' 
-alias ppubck='pax11publish -d' 
-alias ppubr='pax11publish -r' 
+alias pstop='pulseaudio -k'
+alias pstart='pulseaudio --start'
+alias pxstart='start-pulseaudio-x11'
+alias prun='ps aux | grep pulse'
+alias ptempr='rm -rf /tmp/pulse* ~/.pulse*'
+alias ppubck='pax11publish -d'
+alias ppubr='pax11publish -r'
 #==============================
-alias suno='sudo nano' 
+alias suno='sudo nano'
 ###############################
 #Session permissions
 alias sp='loginctl show-session $XDG_SESSION_ID'
@@ -120,7 +120,7 @@ alias service="sudo systemctl"
 ###############Pacman Section 2 ########################
  #alias pacupg='sudo pacman -Syu'        # Synchronize with repositories and then upgrade packages that are out of date on the local system.
  alias pacin='sudo pacman -S'           # Install specific package(s) from the repositories
- alias pacins='sudo pacman -U'          # Install specific package not from the repositories but from a file 
+ alias pacins='sudo pacman -U'          # Install specific package not from the repositories but from a file
  alias pacre='sudo pacman -R'           # Remove the specified package(s), retaining its configuration(s) and required dependencies
  alias pacrem='sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
  alias pacrep='pacman -Si'              # Display information about a given package in the repositories
@@ -318,4 +318,3 @@ alias targ='tar cvfj'
 
 # Extract Tar Archives.
 alias tarx='tar xvf'
-

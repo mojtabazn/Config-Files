@@ -5,48 +5,10 @@
 #└─╼ "
 #}
 
-# source highlighting
-source "$ZDOTDIR"/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-
 # to run bash functions
 autoload bashcompinit
 bashcompinit
 
-alias systemctls='sudo systemctl'
-
-###############################################
-######## Pacman ########
-# update 
-alias pacup="sudo pacman -Syu"
-
-# Remove orphans
-alias orphans="pacman -Qtdq"
-
-# sudo pacman backup packages to Dropbox
-alias pacback='pacman -Qqe | grep -v "$(pacman -Qmq)" > ~/Dropbox/Archer/pklist-new.txt'
-#all conky Runing on system
-
- alias conkyrun='ps aux | grep -v -e "grep" -e "bash" | grep "conky"'
-
- # view c grous that systemd make for proccess in tradetional way ps command :-) = this systemd command = systemd-cgls
- alias psc='ps xawf -eo pid,user,cgroup,args'
-# Pacman 
- #alias pacupg='sudo pacman -Syu'        # Synchronize with repositories and then upgrade packages that are out of date on the local system.
- alias pacin='sudo pacman -S'           # Install specific package(s) from the repositories
- alias pacins='sudo pacman -U'          # Install specific package not from the repositories but from a file 
- alias pacre='sudo pacman -R'           # Remove the specified package(s), retaining its configuration(s) and required dependencies
- alias pacrem='sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
- alias pacrep='pacman -Si'              # Display information about a given package in the repositories
- alias pacreps='pacman -Ss'             # Search for package(s) in the repositories
- alias pacloc='pacman -Qi'              # Display information about a given package in the local database
- alias paclocs='pacman -Qs'             # Search for package(s) in the local database
- alias pacu='sudo pacman -U'
-
- # Additional pacman alias examples
- alias pacupd='sudo pacman -Sy && sudo abs'     # Update and refresh the local package and ABS databases against repositories
- alias pacinsd='sudo pacman -S --asdeps'        # Install given package(s) as dependencies of another package
- alias pacmir='sudo pacman -Syy'                # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 
 ##########################################################
 
@@ -57,14 +19,7 @@ export PATH
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export PATH
 
-alias polproxy='export http_proxy="http://127.0.0.1:8123/"'
+
 export SYSTEMD_LESS=FRXMK journalctl
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export MSF_DATABASE_CONFIG=/usr/share/metasploit/config/database.yml
-
-alias pacup1='sudo pacman -Syu --ignore linux-ck-nehalem --ignore linux-ck-nehalem-headers'
-alias pacup2='sudo pacman -Syu --ignore linux-ck-nehalem --ignore linux-ck-nehalem-headers --ignore linux --ignore linux-headers'
-
-
-
-

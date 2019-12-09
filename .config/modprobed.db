@@ -103,6 +103,8 @@ nf_defrag_ipv4
 nf_defrag_ipv6
 nf_nat
 nfnetlink
+nfnetlink_log
+nfnetlink_queue
 nf_reject_ipv4
 nf_reject_ipv6
 nf_tables
