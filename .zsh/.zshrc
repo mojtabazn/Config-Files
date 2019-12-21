@@ -2,7 +2,7 @@ ZSH_THEME="agnoster"
 DISABLE_AUTO_UPDATE="true"
 export ZSH="/usr/share/oh-my-zsh"
 source /usr/share/oh-my-zsh/oh-my-zsh.sh
-
+#export PATH="/home/mojtaba/Scripts/"
 #######################################
 alias gity='/usr/bin/git --git-dir=$HOME/Config-Files/ --work-tree=$HOME'
 #=========================================================
