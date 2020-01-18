@@ -118,6 +118,8 @@ nft_fib_ipv6
 nft_objref
 nft_reject
 nft_reject_inet
+nls_cp437
+nls_iso8859_1
 nls_utf8
 ntfs
 pcc_cpufreq
@@ -161,9 +163,11 @@ sysimgblt
 tpm
 trusted
 ttm
+uas
 udf
 ufs
 usbhid
+usb_storage
 vfat
 xfs
 xhci_hcd
